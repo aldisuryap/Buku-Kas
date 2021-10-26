@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".ui.home.HomeActivity">
+
+    <TextView
+        android:id="@+id/tv_greeting"
+        style="@style/TextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/greeting_message" />
+
+    <TextView
+        android:id="@+id/tv_sub_greeting"
+        style="@style/TextContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/greeting_sub_message"
+        app:layout_constraintEnd_toEndOf="@+id/tv_greeting"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tv_greeting"
+        app:layout_constraintTop_toBottomOf="@+id/tv_greeting" />
+
+    <include
+        android:id="@+id/card_overview_income"
+        layout="@layout/card_overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
+        app:layout_constraintEnd_toStartOf="@+id/card_overview_expanse"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_sub_greeting" />
+
+    <include
+        android:id="@+id/card_overview_expanse"
+        layout="@layout/card_overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_overview_income"
+        app:layout_constraintTop_toBottomOf="@id/tv_sub_greeting" />
+
+    <View
+        android:id="@+id/rounded_view"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/space_32"
+        android:background="@drawable/bg_rounded_top"
+        app:layout_constraintTop_toBottomOf="@id/card_overview_expanse" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/rounded_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/chart_home"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_dummy_chart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_add_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_32"
+                android:src="@drawable/ic_add_income"
+                app:layout_constraintEnd_toStartOf="@+id/btn_add_expanse"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chart_home" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/TextContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:gravity="center"
+                android:text="@string/title_add_income"
+                app:layout_constraintEnd_toEndOf="@+id/btn_add_income"
+                app:layout_constraintStart_toStartOf="@+id/btn_add_income"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_income" />
+
+            <ImageButton
+                android:id="@+id/btn_add_expanse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_32"
+                android:src="@drawable/ic_add_expanse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_add_income"
+                app:layout_constraintTop_toBottomOf="@+id/chart_home" />
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/TextContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:gravity="center"
+                android:text="@string/title_add_expanse"
+                app:layout_constraintEnd_toEndOf="@+id/btn_add_expanse"
+                app:layout_constraintStart_toStartOf="@+id/btn_add_expanse"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_expanse" />
+
+            <ImageButton
+                android:id="@+id/btn_detail_cash_flow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                android:src="@drawable/ic_cash_flow"
+                app:layout_constraintEnd_toStartOf="@+id/btn_settings"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                style="@style/TextContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginBottom="@dimen/space_16"
+                android:gravity="center"
+                android:text="@string/title_detail_cash_flow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_detail_cash_flow"
+                app:layout_constraintStart_toStartOf="@+id/btn_detail_cash_flow"
+                app:layout_constraintTop_toBottomOf="@+id/btn_detail_cash_flow"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                android:src="@drawable/ic_settings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/btn_detail_cash_flow"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                style="@style/TextContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginBottom="@dimen/space_16"
+                android:gravity="center"
+                android:text="@string/title_settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_settings"
+                app:layout_constraintStart_toStartOf="@+id/btn_settings"
+                app:layout_constraintTop_toBottomOf="@+id/btn_settings"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

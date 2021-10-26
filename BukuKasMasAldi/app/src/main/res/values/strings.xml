@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Buku Kas Mas Aldi</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="empty_username_message">Kolom username tidak boleh kosong</string>
+    <string name="empty_password_message">Kolom password tidak boleh kosong</string>
+    <string name="empty_date_message">Kolom tanggal tidak boleh kosong</string>
+    <string name="empty_amount_message">Kolom nominal tidak boleh kosong</string>
+    <string name="empty_description_message">Kolom keterangan tidak boleh kosong</string>
+    <string name="failed_edit_password">Password baru tidak boleh sama</string>
+    <string name="failed_edit_current_password">Password saat ini salah</string>
+
+    <string name="login_success_message">Login berhasil!</string>
+    <string name="login_failed_message">Login gagal! Silahkan coba lagi</string>
+
+    <string name="greeting_message">Hai, %s !</string>
+    <string name="greeting_sub_message">Selamat Datang di Buku Kas Mas Aldi</string>
+
+    <string name="title_expanse">Pengeluaran</string>
+    <string name="title_income">Pemasukkan</string>
+    <string name="default_amount">Rp 0</string>
+    <string name="title_add_income">Tambah\nPemasukkan</string>
+    <string name="title_add_expanse">Tambah\nPengeluaran</string>
+    <string name="title_detail_cash_flow">Detail Cash\nFlow</string>
+    <string name="title_settings">Pengaturan</string>
+
+    <string name="date">Tanggal</string>
+    <string name="amount">Nominal</string>
+    <string name="description">Keterangan</string>
+    <string name="save">Simpan</string>
+</resources>
